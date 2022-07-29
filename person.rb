@@ -7,6 +7,7 @@ class Person < Nameable
   attr_reader :id, :rentals
 
   def initialize(age, name, _parent_permission)
+    super()
     @id = Random.rand(1..1000)
     @name = name
     @age = age
@@ -32,6 +33,7 @@ end
 
 class BaseDecorator < Nameable
   def initialize(nameable)
+    super()
     @nameable = nameable
   end
 
@@ -41,12 +43,22 @@ class BaseDecorator < Nameable
 end
 
 class CapitalizeDecorator < BaseDecorator
+  def initialize(nameable)
+    super(nameable)
+    @nameable = nameable
+  end
+
   def correct_name
     @nameable.correct_name.capitalize
   end
 end
 
 class TrimmerDecorator < BaseDecorator
+  def initialize(nameable)
+    super(nameable)
+    @nameable = nameable
+  end
+
   def correct_name
     if @nameable.correct_name.length > 10
       @nameable.correct_name.slice(0...10)
