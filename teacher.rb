@@ -14,8 +14,8 @@ end
 teacher = Teacher.new('machine learning')
 teacher.can_use_services?
 
-teacher.name = 'galileo'
-teacher.age = 27
-p teacher.name
-capital_name = CapitalizeDecorator.new(teacher)
-p capital_name.correct_name
+# teacher.name = 'galileo'
+# teacher.age = 27
+# p teacher.name
+# capital_name = CapitalizeDecorator.new(teacher)
+# p capital_name.correct_name

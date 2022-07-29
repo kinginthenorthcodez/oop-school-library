@@ -25,11 +25,11 @@ student.name = 'Nanish'
 student.age = 17
 
 p student.classroom
-p student.id
-p student.name
-p student.age
-p student.age
+# p student.id
+# p student.name
+# p student.age
+# p student.age
 
-p student.can_use_services?(true)
-student.play_hooky
-p student.classroom
+# p student.can_use_services?(true)
+# student.play_hooky
+# p student.classroom
