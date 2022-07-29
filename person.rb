@@ -14,6 +14,11 @@ class Person < Nameable
     @rentals = []
   end
 
+  def add_rentals(rental)
+    @rentals.push(rental)
+    rental.person = self
+  end
+
   private
 
   def of_age?
