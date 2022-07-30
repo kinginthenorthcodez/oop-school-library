@@ -12,7 +12,3 @@ class Classroom
     student.classroom = self
   end
 end
-
-class_b = Classroom.new('Class B')
-p class_b.lable
-p class_b.students

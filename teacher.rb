@@ -1,21 +1,13 @@
 require_relative './person'
 
 class Teacher < Person
-  def initialize(specializtion)
+  def initialize(specializtion, age, name, parent_permission: true)
     super(age, name, true)
     @specializtion = specializtion
+    @parent_permission = parent_permission
   end
 
   def can_use_services?
     p true
   end
 end
-
-teacher = Teacher.new('machine learning')
-teacher.can_use_services?
-
-teacher.name = 'galileo'
-teacher.age = 27
-p teacher.name
-capital_name = CapitalizeDecorator.new(teacher)
-p capital_name.correct_name

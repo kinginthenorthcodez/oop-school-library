@@ -3,8 +3,8 @@ require './book'
 require './rental'
 
 class Person < Nameable
-  attr_accessor :name, :age
-  attr_reader :id, :rentals
+  attr_accessor :name, :age, :rentals
+  attr_reader :id
 
   def initialize(age, name, _parent_permission)
     super()
@@ -72,32 +72,3 @@ class TrimmerDecorator < BaseDecorator
     end
   end
 end
-
-person = Person.new(27, 'nanishisaac', true)
-person2 = Person.new(28, 'Maqueen', true)
-book1 = Book.new('JK Rowling', 'Harry Potter')
-book2 = Book.new('george R.R martin', 'Game of Thrones')
-
-p person.correct_name
-capitalized_person = CapitalizeDecorator.new(person)
-p capitalized_person.correct_name
-capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
-p capitalized_trimmed_person.correct_name
-
-p '** PERSON RENTALS Before***'
-p person.rentals
-
-p '** Book RENTALS Before***'
-p book1.rentals
-p book2.rentals
-
-Rental.new('2022-07-29', person, book1)
-Rental.new('2022-07-29', person2, book1)
-Rental.new('2022-07-29', person2, book2)
-
-p '** PERSON RENTALS After***'
-p person.rentals.count
-
-p '** Book RENTALS After***'
-p book1.rentals.count
-p book2.rentals.count
