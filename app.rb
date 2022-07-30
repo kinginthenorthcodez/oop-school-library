@@ -138,10 +138,10 @@ class App
   end
 
   def list_rentals
-    selcted_person = nil, id = 0
     list_people
     loop do
       print 'Enter ID of person from listed persons'
+      selcted_person = nil
       id = parse_int
       persons.each do |person|
         if person.id == id
@@ -149,9 +149,11 @@ class App
           break
         end
       end
-      next unless selcted_person
+      unless selcted_person
 
-      puts "Person not found with id #{id} : try again"
+        puts "Person not found with id #{id} : try again"
+        next
+      end
       selcted_person.rentals.each do |rent|
         puts "Title: #{rent.book.title} Author: #{rent.book.author} Date: #{rent.date}"
       end
