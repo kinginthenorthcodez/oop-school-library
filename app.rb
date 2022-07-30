@@ -46,7 +46,7 @@ class App
       puts 'Wrong input'
     end
     puts "Teacher entered.. #{name}  #{age} #{specialization}"
-    Teacher.new(specialization, age, name, true)
+    Teacher.new(specialization, age, name)
   end
 
   def create_student
