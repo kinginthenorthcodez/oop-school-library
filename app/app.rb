@@ -4,6 +4,7 @@ require_relative './teacher'
 require_relative './rental'
 require_relative './book'
 require_relative './inputs'
+require_relative './save'
 
 class App
   attr_accessor :books, :persons, :rentals
@@ -133,6 +134,7 @@ class App
     end
     person = persons[person_index - 1]
     book = books[book_index - 1]
+    save_rentals(date, person_index, book_index)
     rental = Rental.new(date, person, book)
     rentals.push(rental)
   end
