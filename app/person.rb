@@ -4,13 +4,14 @@ require './rental'
 
 class Person < Nameable
   attr_accessor :name, :age, :rentals
-  attr_reader :id
+  attr_reader :id, :parent_permission
 
-  def initialize(age, name, _parent_permission)
+  def initialize(age, name, parent_permission: true)
     super()
     @id = Random.rand(1..1000)
     @name = name
     @age = age
+    @parent_permission = parent_permission
     @rentals = []
   end
 
